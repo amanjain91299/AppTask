@@ -51,102 +51,81 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String fromValue = binding.etConvert.getText().toString();
+                double value = Double.parseDouble(fromValue);
+                double result = 0;
                 for(Output o : al){
-                    if(o.getKey().equals("GBP")){
-
-                    }
-                    else if(o.getKey().equals("HKD")){
-
-                    }
-                    else if(o.getKey().equals("IDR")){
-
-                    }
-                    else if(o.getKey().equals("ILS")){
-
-                    }
-                    else if(o.getKey().equals("DKK")){
-
-                    }
-                    else if(o.getKey().equals("INR")){
-
-                    }
-                    else if(o.getKey().equals("CHF")){
-
-                    }
-                    else if(o.getKey().equals("MXN")){
-
-                    }
-                    else if(o.getKey().equals("CZK")){
-
-                    }
-                    else if(o.getKey().equals("SGD")){
-
-                    }
-                    else if(o.getKey().equals("THB")){
-
-                    }
-                    else if(o.getKey().equals("HRK")){
-
-                    }
-                    else if(o.getKey().equals("MYR")){
-
-                    }
-                    else if(o.getKey().equals("NOK")){
-
-                    }
-                    else if(o.getKey().equals("CNY")){
-
-                    }
-                    else if(o.getKey().equals("BGN")){
-
-                    }
-                    else if(o.getKey().equals("PHP")){
-
-                    }
-                    else if(o.getKey().equals("SEK")){
-
-                    }
-                    else if(o.getKey().equals("PLN")){
-
-                    }
-                    else if(o.getKey().equals("ZAR")){
-
-                    }
-                    else if(o.getKey().equals("CAD")){
-
-                    }
-                    else if(o.getKey().equals("ISK")){
-
-                    }
-                    else if(o.getKey().equals("BRL")){
-
-                    }
-                    else if(o.getKey().equals("RON")){
-
-                    }
-                    else if(o.getKey().equals("NZD")){
-
-                    }
-                    else if(o.getKey().equals("TRY")){
-
-                    }
-                    else if(o.getKey().equals("JPY")){
-
-                    }
-                    else if(o.getKey().equals("RUB")){
-
-                    }
-                    else if(o.getKey().equals("KRW")){
-
-                    }
-                    else if(o.getKey().equals("USD")){
-
-                    }
-                    else if(o.getKey().equals("HUF")){
-
-                    }
-                    else if(o.getKey().equals("AUD")){
-
+                    if(!o.getValue().equals("")) {
+                        if (o.getKey().equals("GBP")) {
+                            result = value / 1.15;
+                        } else if (o.getKey().equals("HKD")) {
+                            result = value * 9.44806;
+                        } else if (o.getKey().equals("IDR")) {
+                            result = value * 17377.1;
+                        } else if (o.getKey().equals("ILS")) {
+                            result = value * 3.7;
+                        } else if (o.getKey().equals("DKK")) {
+                            result = value * 7.44;
+                        } else if (o.getKey().equals("INR")) {
+                            result = value * 88.807;
+                        } else if (o.getKey().equals("CHF")) {
+                            result = value * 1.0952;
+                        } else if (o.getKey().equals("MXN")) {
+                            result = value * 24.0232;
+                        } else if (o.getKey().equals("CZK")) {
+                            result = value * 25.5492;
+                        } else if (o.getKey().equals("SGD")) {
+                            result = value * 1.6161;
+                        } else if (o.getKey().equals("THB")) {
+                            result = value * 38.012;
+                        } else if (o.getKey().equals("HRK")) {
+                            result = value * 7.519;
+                        } else if (o.getKey().equals("MYR")) {
+                            result = value * 5.0013;
+                        } else if (o.getKey().equals("NOK")) {
+                            result = value * 10.0074;
+                        } else if (o.getKey().equals("CNY")) {
+                            result = value * 7.8024;
+                        } else if (o.getKey().equals("BGN")) {
+                            result = value * 1.9558;
+                        } else if (o.getKey().equals("PHP")) {
+                            result = value * 57.867;
+                        } else if (o.getKey().equals("SEK")) {
+                            result = value * 10.1265;
+                        } else if (o.getKey().equals("PLN")) {
+                            result = value * 4.5218;
+                        } else if (o.getKey().equals("ZAR")) {
+                            result = value * 17.0722;
+                        } else if (o.getKey().equals("CAD")) {
+                            result = value * 1.47;
+                        } else if (o.getKey().equals("ISK")) {
+                            result = value * 150.9;
+                        } else if (o.getKey().equals("BRL")) {
+                            result = value * 6.3942;
+                        } else if (o.getKey().equals("RON")) {
+                            result = value * 4.9259;
+                        } else if (o.getKey().equals("NZD")) {
+                            result = value * 1.6771;
+                        } else if (o.getKey().equals("TRY")) {
+                            result = value * 10.2174;
+                        } else if (o.getKey().equals("JPY")) {
+                            result = value * 132.49;
+                        } else if (o.getKey().equals("RUB")) {
+                            result = value * 89.6216;
+                        } else if (o.getKey().equals("KRW")) {
+                            result = value * 1368.07;
+                        } else if (o.getKey().equals("USD")) {
+                            result = value * 1.2123;
+                        } else if (o.getKey().equals("HUF")) {
+                            result = value * 355.52;
+                        } else if (o.getKey().equals("AUD")) {
+                            result = value * 1.5634;
+                        }
+                        DatabaseHelper helper = new DatabaseHelper(MainActivity.this);
+                        SQLiteDatabase database = helper.getReadableDatabase();
+                        ContentValues values = new ContentValues();
+                        values.put(o.getKey(),""+result);
+                        database.update("fxrate",values,null,null);
+                        database.close();
                     }
                 }
             }

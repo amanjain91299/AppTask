@@ -46,21 +46,21 @@
         android:id="@+id/btnConvert"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="28dp"
         android:text="Convert"
         app:layout_constraintEnd_toEndOf="parent"
 
-        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etConvert" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="396dp"
-        android:layout_height="547dp"
+        android:id="@+id/rv"
+        android:layout_width="370dp"
+        android:layout_height="520dp"
         android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/rv"
         app:layout_constraintTop_toBottomOf="@+id/btnConvert" />
 </androidx.constraintlayout.widget.ConstraintLayout>
