@@ -33,12 +33,12 @@
 
     <EditText
         android:id="@+id/etConvert"
-        android:layout_width="354dp"
-        android:layout_height="41dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
+        android:layout_width="308dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="24dp"
         android:background="@drawable/edittext_border"
+        android:ems="10"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -49,13 +49,13 @@
         android:layout_marginTop="28dp"
         android:text="Convert"
         app:layout_constraintEnd_toEndOf="parent"
-
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etConvert" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv"
+        android:padding="15dp"
         android:layout_width="match_parent"
         android:layout_height="520dp"
         android:layout_marginTop="16dp"

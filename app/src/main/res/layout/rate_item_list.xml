@@ -7,7 +7,7 @@
 
     <TextView
         android:id="@+id/tvRates"
-        android:layout_width="129dp"
+        android:layout_width="98dp"
         android:layout_height="36dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -18,8 +18,8 @@
 
     <TextView
         android:id="@+id/tvValue"
-        android:layout_width="195dp"
-        android:layout_height="37dp"
+        android:layout_width="148dp"
+        android:layout_height="36dp"
         android:layout_marginTop="16dp"
         android:padding="5dp"
         android:text="TextView"
@@ -27,12 +27,12 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:layout_width="24dp"
-        android:layout_height="37dp"
+        android:id="@+id/btnRemove"
+        android:layout_width="45dp"
+        android:layout_height="33dp"
         android:layout_marginLeft="28dp"
         android:layout_marginTop="16dp"
         android:src="@drawable/ic_baseline_delete_24"
         app:layout_constraintLeft_toRightOf="@+id/tvValue"
-        app:layout_constraintTop_toTopOf="parent"
-        android:id="@+id/btnRemove"/>
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
